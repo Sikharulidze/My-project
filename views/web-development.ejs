@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="web-page">
+
+    <h1 class="web">Web Development</h1>
+    <div>
+        <ul class="create">
+         <li><button onclick="navigateToPage('create-home')">Home</button></li>
+         <li><button onclick="navigateToPage('create-post')">Post</button></li>
+         <li><button  onclick="navigateToPage('create-bio')">Bio</button></li>
+         <li><button  onclick="navigateToPage('create-my-dog')">My Dog</button></li>   
+         <li><button  onclick="navigateToPage('create-web-development')">Web Development</button></li> 
+         <li><button  onclick="navigateToPage('create-tindog')">Tindog</button></li>   
+        </ul>
+        </div>
+
+        <div class="web-development-container">
+            <div class="text-content">
+
+    <h2 class="Description">What Exactly is Web Development?</h2>
+    
+    <p class="Description1">
+        Web development is closely related to the job of designing the features and functionality of websites and apps (often called “web design”), but the “web development” term is usually reserved for the actual construction and programming of websites and apps.
+
+Think of all the web pages you have used over the years – Web Developers built those sites, making sure they functioned properly and performed in ways that allowed for a great user experience. Web Developers do this by writing lines of code, using a variety of programming languages, which vary depending on the tasks they are performing and the platforms they are working on.
+    </p>
+
+</div>
+    <img class="picture1" src="/images/image.png">
+</div>
+
+<h3 class="description2">Web Development vs. Web Design</h3>
+
+
+<div class="roles-container">
+    <div class="role">
+         <h4 class="h4-h5">Web Designers:</h4>
+    
+<ul>
+    <li>✔️  Create everything a user sees on a website or software product, including all visual, color, typography, and usability elements.</li>
+    <li>✔️  Work directly with a client to create designs or work as part of a team to develop client vision.</li>
+    <li>✔️   May need knowledge of a programming language or some coding skills, or at least some level of familiarity with widely used languages such as HTML, CSS, PHP, and JavaScript.</li>
+    <li>✔️ Create wireframes and prototypes to test design ideas, offer input on design logos, branding, company style guides.</li>
+</ul>
+</div>
+
+<div class="role">
+<h5 class="h4-h5">Web Developers:</h5>
+
+<ul>
+    <li>✔️ Write the code that makes a website function, whether they work on the front end or back end (server-side).</li>
+    <li>✔️ Create or implement designs demanded by a client or created by a design team.</li>
+    <li>✔️ Need expert-level knowledge of a variety of programming languages, including HTML (HyperText Markup Language), CSS, PHP, and JavaScript but also extending to other languages (Ruby, C/C++, Python), frameworks, and libraries.</li>
+    <li>✔️ Rarely create mockups, select typography, or pick color palettes.</li>
+        
+        </ul>
+
+    </div>
+</div>
+
+<h6 class="instructions">How to become a Web Developer</h6>
+<div class="instructions1">
+
+<li>Learn the basics of Web Development.</li>
+<li>Understand Web Development tools and technologies.</li>
+<li>Learn Front-End Development.</li>
+<li>Master Back-End Development.</li>
+<li>Practice regularly and build projects.</li>
+<li>Stay updated and keep learning.</li>
+<li>Networking and job search.</li>
+<li>Continuous improvement.</li>
+
+</div>
+
+
+    <script>
+
+        function navigateToPage(page) {
+                    
+                    if (page === 'create-post') {
+                        window.location.href = '/create'; 
+                    } else if (page === 'create-bio') {
+                        window.location.href = '/bio';  
+                    } else if (page === 'create-my-dog') {
+                        window.location.href = '/my-dog';  
+                    } else if (page === 'create-home') {
+                        window.location.href = '/home';  
+                    } else if (page === 'create-web-development') {
+                        window.location.href = '/web-development';  
+                    } else if (page === 'create-tindog') {
+                        window.location.href = '/tindog';
+                  }  
+                  
+                }
+        
+                   
+                </script>
+
+</body>
+</html>

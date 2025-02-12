@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    
+
+</head>
+<body>
+
+    
+    <div class="container">
+        
+
+        <div class="content-wrapper">
+            
+            <div class="sidebar">
+                <ul class="home">
+                 
+                 <li><button onclick="navigateToPage('create-post')">Post</button></li>
+                 <li><button  onclick="navigateToPage('create-bio')">Bio</button></li>
+                 <li><button  onclick="navigateToPage('create-my-dog')">My Dog</button></li>  
+                 <li><button onclick="navigateToPage('create-web-development')">Web Development</button></li>
+                 <li><button  onclick="navigateToPage('create-tindog')">Tindog</button></li>  
+
+                    <ul id="posts-list" style="display: none;">
+                        <% if (posts.length >= 1) { %> 
+                            <% posts.forEach(post => { %> 
+                                <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
+                            <% }) %>
+                        <% } %>
+                    </ul>
+                </ul>
+            
+           
+
+            <div class="main-content">
+                <section class="posts">
+                    <% if (posts.length >= 1) { %> 
+                        <ul>
+                            <% posts.forEach(post => { %>
+                                <li class="post-item">
+                                    <h3><a href="/post/<%= post.id %>"><%= post.title %></a></h3>
+                                    <p><%= post.content %></p>
+                                    <small>Created at: <%= post.createdAt.toLocaleString() %></small>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    <% } else { %>
+                    
+                    <% } %>
+
+                    
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="picture2-container">
+    <img class="picture2" src="./images/web.png" height="400">
+</div>
+    
+    
+    
+    <script>
+        
+        function navigateToPage(page) {
+            
+    if (page === 'create-post') {
+        window.location.href = '/create'; 
+    } else if (page === 'create-bio') {
+        window.location.href = '/bio';  
+    } else if (page === 'create-my-dog') {
+        window.location.href = '/my-dog';  
+    } else if (page === 'create-web-development') {
+        window.location.href = '/web-development';
+    } else if (page==='create-tindog') {
+        window.location.href='/tindog';
+    }
+}
+
+        
+        function toggleAllPosts() {
+            const postsList = document.getElementById("posts-list");
+            postsList.style.display = postsList.style.display === "none" ? "block" : "none";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+
+<body class="mia-page">
+    <h1 class="welcome">Welcome to My Page!</h1>
+    
+    <div>
+        <ul class="mia-dog">
+         <li><button onclick="navigateToPage('create-home')">Home</button></li>
+         <li><button onclick="navigateToPage('create-post')">Post</button></li>
+         <li><button  onclick="navigateToPage('create-bio')">Bio</button></li>
+         <li><button  onclick="navigateToPage('create-my-dog')">My Dog</button></li> 
+         <li><button  onclick="navigateToPage('create-web-development')">Web Development</button></li>   
+         <li><button  onclick="navigateToPage('create-tindog')">Tindog</button></li> 
+        </ul>
+        </div>
+    
+
+
+
+<a href="/about.html" >
+    <img class="cugo" src="./images/mia.png" height="400" alt="Mia the dog" >
+</a>
+
+
+<hr />
+<a class="contact" href="./contact.html">Contact Me</a>
+
+<script>
+                
+        function navigateToPage(page) {
+            
+            if (page === 'create-post') {
+        window.location.href = '/create'; 
+    } else if (page === 'create-bio') {
+        window.location.href = '/bio';  
+    } else if (page === 'create-my-dog') {
+        window.location.href = '/my-dog';  
+    } else if (page === 'create-web-development') {
+        window.location.href = '/web-development';
+    } else if (page==='create-tindog') {
+        window.location.href='/tindog';
+    }  else if (page === 'create-home') {
+                window.location.href = '/home';  
+            }
+        }
+    
+               
+            </script>
+
+</body>

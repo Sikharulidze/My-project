@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    
+        <h1>Create a New Post</h1>
+       
+
+    <div>
+        <ul class="create">
+         <li><button onclick="navigateToPage('create-home')">Home</button></li>
+         <li><button onclick="navigateToPage('create-post')">Post</button></li>
+         <li><button  onclick="navigateToPage('create-bio')">Bio</button></li>
+         <li><button  onclick="navigateToPage('create-my-dog')">My Dog</button></li>   
+         <li><button  onclick="navigateToPage('create-web-development')">Web Development</button></li> 
+         <li><button  onclick="navigateToPage('create-tindog')">Tindog</button></li>
+        </ul>
+        </div>
+           
+   
+
+    <div id="create-post-form" class="post-creation">
+        <form action="/create" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" required>
+
+            <label for="content">Content:</label>
+            <textarea name="content" id="content" rows="6" required></textarea>
+
+            <button >Create Post</button>
+            </form>
+            <a href="#" onclick="toggleAllPosts()" id="all-posts-link">All Posts</a>
+            <div id="posts-list" style="display: none;">
+                <% if (posts.length > 0) { %> 
+                    <ul>
+                        <% posts.forEach(post => { %>
+                            <li>
+                                <h3><a href="/post/<%= post.id %>"><%= post.title %></a></h3>
+                                <p><%= post.content %></p>
+                                <small>Created at: <%= post.createdAt.toLocaleString() %></small>
+                            </li>
+                        <% }) %>
+                    </ul>
+                <% } else { %>
+                    <p>No posts to display.</p>
+                <% } %>
+            </div>
+        </div>
+    
+        <script>
+
+function navigateToPage(page) {
+            
+    if (page === 'create-post') {
+        window.location.href = '/create'; 
+    } else if (page === 'create-bio') {
+        window.location.href = '/bio';  
+    } else if (page === 'create-my-dog') {
+        window.location.href = '/my-dog';  
+    } else if (page === 'create-web-development') {
+        window.location.href = '/web-development';
+    } else if (page==='create-tindog') {
+        window.location.href='/tindog';
+    }  else if (page === 'create-home') {
+                window.location.href = '/home';  
+            }
+        }
+
+           
+            function toggleAllPosts() {
+                const postsList = document.getElementById("posts-list");
+                postsList.style.display = postsList.style.display === "none" ? "block" : "none";
+            }
+        </script>
+
+        </div>
+
+</body>
+</html>
